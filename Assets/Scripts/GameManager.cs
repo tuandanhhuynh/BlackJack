@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public Button hitBtn;
     public Button standBtn;
     public Button betBtn;
+    public Button endBtn;
 
     // Access to Player and Dealer objects
     public PlayerScript player;
@@ -37,7 +38,12 @@ public class GameManager : MonoBehaviour
         hitBtn.onClick.AddListener( () => HitClicked());
         standBtn.onClick.AddListener( () => StandClicked());
         betBtn.onClick.AddListener( () => BetClicked());
+        endBtn.onClick.AddListener( () => EndClicked());
+    }
 
+    private void EndClicked()
+    {
+        Application.Quit();
     }
 
     // Deal like start game button
@@ -64,9 +70,9 @@ public class GameManager : MonoBehaviour
         standBtn.gameObject.SetActive(true);
         standBtnText.text = "Stand";
         // Set standard pot size
-        pot = 40;
+        pot = 80;
         betsText.text = "Bets: $" + pot.ToString();
-        player.AdjustMoney(-20);
+        player.AdjustMoney(-40);
         cashText.text = "$" + player.getMoney().ToString();
         // check black jack and end the game
         // player black jack, or dealer black jack, or both black jack
