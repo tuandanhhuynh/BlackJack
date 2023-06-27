@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 2802dfb7045afc04abae62e569f84a07
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Casino Flat Shadow
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 81781abb5ab202248a87217d6a2e7d67, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
