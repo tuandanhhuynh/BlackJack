@@ -29,8 +29,6 @@ public class DeckScript : MonoBehaviour
             }
             cardValues[i] = num++;
         }
-        currentIndex = 1;
-
     }
 
     public void shuffle()
@@ -39,7 +37,7 @@ public class DeckScript : MonoBehaviour
         for(int i = cardSprites.Length - 1; i > 0; i--)
         {
             //get random position
-            int j = Mathf.FloorToInt(Random.Range(0.0f, 1.0f) * (cardSprites.Length - 1));
+            int j = Mathf.FloorToInt(Random.Range(0.0f, 1.0f) * (cardSprites.Length - 1)) + 1;
             
             // swap position for Sprites
             Sprite spriteHolder = cardSprites[i];
@@ -51,6 +49,7 @@ public class DeckScript : MonoBehaviour
             cardValues[i] = cardValues[j];
             cardValues[j] = holder;
         }
+        currentIndex = 1;
     }
 
     public int DealCard(CardScript cardScript)

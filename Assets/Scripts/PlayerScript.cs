@@ -46,8 +46,42 @@ public class PlayerScript : MonoBehaviour
         return handValue;
     }
 
+    public int getMoney()
+    {
+        return money;
+    }
+    //Add or subtract from money
+    public void AdjustMoney(int amount)
+    {
+        money += amount;
+    }
+    // check if ace needed for conversions, 1 or 11 or vice versa 
     public void AceCheck()
     {
+        foreach(CardScript ace in aceList)
+        {
+            if(handValue + 10 < 22 && ace.GetValueOfCard() == 1)
+            {
+                ace.SetValueOfCard(11);
+                handValue += 10;
+            } else if(handValue > 21 && ace.GetValueOfCard() == 11)
+            {
+                ace.SetValueOfCard(1);
+                handValue -= 10;
+            }
+        }
+    }
 
+    // Hides all cards, resets the needed variables
+    public void ResetHand()
+    {
+        for(int i = 0; i < hand.Length; i++)
+        {
+            hand[i].GetComponent<Renderer>().enabled = false;
+            hand[i].GetComponent<CardScript>().ResetCard();
+        }
+        cardIndex = 0;
+        handValue = 0;
+        aceList = new List<CardScript>();
     }
 }
