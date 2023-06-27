@@ -1,2 +1,7 @@
 # BlackJack
-this project is used C# and unity to implement the game black jack.
+This project utilizes C# and Unity to implement the game of Blackjack.
+
+# How to Play 
+git clone this repo
+git checkout Release-version
+then start the game with BlackJack.exe
